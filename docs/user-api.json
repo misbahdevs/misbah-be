@@ -2,7 +2,7 @@
     "openapi": "3.0.3",
     "info": {
         "title": "Misbah BE",
-        "description": "RESTFUL API builded with php programming language",
+        "description": "Misbah Backend with Laravel Framework",
         "version": "1.0.0"
     },
     "servers": [
@@ -18,12 +18,12 @@
                     "content": {
                         "application/json": {
                             "examples": {
-                                "misbah": {
-                                    "description": "Register user misbah",
+                                "John doe": {
+                                    "description": "Register user John doe",
                                     "value": {
-                                        "username": "misbahdev",
-                                        "password": "rahasia",
-                                        "name": "Misbah"
+                                        "username": "john doe",
+                                        "password": "Password123",
+                                        "name": "John Doe"
                                     }
                                 }
                             },
@@ -56,12 +56,7 @@
                                         "value": {
                                             "errors": {
                                                 "username": [
-                                                    "username must not blank",
-                                                    "username min 6 character"
-                                                ],
-                                                "name": [
-                                                    "username must not blank",
-                                                    "username min 6 character"
+                                                    "username already registered."
                                                 ]
                                             }
                                         }
@@ -80,9 +75,9 @@
                                         "value": {
                                             "data": {
                                                 "id": 1,
-                                                "name": "Misbah",
-                                                "username": "misbahdev",
-                                                "password": "rahasia"
+                                                "name": "John Doe",
+                                                "username": "john doe",
+                                                "password": "Password123"
                                             }
                                         }
                                     }
@@ -125,6 +120,7 @@
                     "content": {
                         "application/json": {
                             "schema": {
+                                "required": ["username", "password"],
                                 "type": "object",
                                 "properties": {
                                     "username": {
